@@ -1,0 +1,8 @@
+embeddings {
+  tensor_path: "tensorboard/vectors.tsv"
+  sprite {
+    image_path: "tensorboard/tiles.png"
+    single_image_dim: 50
+    single_image_dim: 50
+  }
+}
