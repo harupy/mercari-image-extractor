@@ -8,6 +8,7 @@ import torchvision.models as models
 import torchvision.transforms as transforms
 import torch.utils.data as data
 from config import IMAGE_DIR, TENSORBORAD_DIR
+from utils import mkdir_if_not_exists
 
 
 def get_data_loader(data_dir, transform):
@@ -53,6 +54,7 @@ def get_vectors(img_dir):
 def main():
   vectors = get_vectors(IMAGE_DIR)
   print('Writing to a tsv file...')
+  mkdir_if_not_exists(TENSORBORAD_DIR)
   pd.DataFrame(vectors).to_csv(f'{TENSORBORAD_DIR}/vectors_all.tsv', index=False, sep='\t', header=False)
 
 

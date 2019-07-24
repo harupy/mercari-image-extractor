@@ -4,7 +4,8 @@ import cv2
 
 from tqdm import tqdm
 from config import IMAGE_DIR
-from utils import (empty_dir,
+from utils import (mkdir_if_not_exists,
+                   empty_dir,
                    generate_uuid,
                    read_grab_area,
                    refresh,
@@ -58,6 +59,7 @@ def find_crop_areas(grid_img_path='grid.png'):
 
 
 def main():
+  mkdir_if_not_exists(IMAGE_DIR)
   empty_dir(IMAGE_DIR)
   grab_area = read_grab_area()
   crop_areas = find_crop_areas()
