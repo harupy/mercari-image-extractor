@@ -9,7 +9,7 @@ A python program to extract item images from Mercari.
 1. `python show_mouse_position.py` to find the left top and bottom right coordinates on the screen of your tablet.
 1. Update `grab_area.json`
 1. `python make_grid_image.py` to create a grid image like below.
-1. `python crop_item_images` to crop item images.
+1. `python crop_item_images.py` to crop item images.
 1. `python make_vectors.py` to convert the item images to vectors.
 1. `python make_tiles.py` to create a sprite image.
 1. `tensorboard --logdir .` to run Tensorboard and visualize the image vectors.
