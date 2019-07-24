@@ -7,6 +7,11 @@ import numpy as np
 import pyscreenshot as ImageGrab
 
 
+def mkdir_if_not_exists(dir_path):
+  if not os.path.exists(dir_path):
+    os.mkdir(dir)
+
+
 def empty_dir(dir_path):
   for fname in os.listdir(dir_path):
     fpath = os.path.join(dir_path, fname)
