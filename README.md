@@ -1,6 +1,6 @@
 # Mercari Image Extractor
 
-A python program to extract item images from Mercari.
+A set of python scripts to extract item images from Mercari.
 
 ![demo](https://user-images.githubusercontent.com/17039389/61799835-cb2afc80-ae66-11e9-9f5b-9f4f06d296f8.gif)
 
