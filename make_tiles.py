@@ -32,8 +32,8 @@ def main():
 
   cv2.imwrite(f'{TENSORBORAD_DIR}/tiles.png', tiles)
 
-  df = pd.read_csv(f'{TENSORBORAD_DIR}/vectors_all.tsv', header=None)
-  df.iloc[:num_files].to_csv(f'{TENSORBORAD_DIR}/vectors.tsv', index=False, sep='\t', header=False)
+  df = pd.read_csv(f'{TENSORBORAD_DIR}/vectors_all.tsv', sep='\t', header=None)
+  df.iloc[:num_files].to_csv(f'{TENSORBORAD_DIR}/vectors.tsv', sep='\t', index=False, header=False)
 
 
 if __name__ == '__main__':

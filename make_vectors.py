@@ -61,7 +61,7 @@ def main():
   vectors = get_vectors(IMAGE_DIR)
   print('Writing to a tsv file...')
   mkdir_if_not_exists(TENSORBORAD_DIR)
-  pd.DataFrame(vectors).to_csv(f'{TENSORBORAD_DIR}/vectors_all.tsv', index=False, sep='\t', header=False)
+  pd.DataFrame(vectors).to_csv(f'{TENSORBORAD_DIR}/vectors_all.tsv', sep='\t', index=False, header=False)
 
 
 if __name__ == '__main__':
