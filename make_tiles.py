@@ -17,7 +17,7 @@ def main():
 
   tiles = np.zeros((nrows * tile_height, ncols * tile_width, 3))
 
-  for idx, img_path in enumerate(tqdm(sorted(img_paths[:num_files]))):
+  for idx, img_path in enumerate(tqdm(sorted(img_paths)[:num_files])):
     img = cv2.imread(img_path)
     img = cv2.resize(img, (tile_width, tile_height))
     idx_row = idx // ncols
@@ -32,7 +32,7 @@ def main():
 
   cv2.imwrite(f'{TENSORBORAD_DIR}/tiles.png', tiles)
 
-  df = pd.read_csv(f'{TENSORBORAD_DIR}/vectors_all.tsv')
+  df = pd.read_csv(f'{TENSORBORAD_DIR}/vectors_all.tsv', header=None)
   df.iloc[:num_files].to_csv(f'{TENSORBORAD_DIR}/vectors.tsv', index=False, header=False)
 
 

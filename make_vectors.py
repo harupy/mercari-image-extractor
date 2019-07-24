@@ -11,8 +11,14 @@ from config import IMAGE_DIR, TENSORBORAD_DIR
 from utils import mkdir_if_not_exists
 
 
+class ImageFolderWithPath(torchvision.datasets.ImageFolder):
+  def __getitem__(self, index):
+    fname = self.imgs[index]
+    return super().__getitem__(index)[0], fname
+
+
 def get_data_loader(data_dir, transform):
-  dataset = torchvision.datasets.ImageFolder(data_dir, transform=transform)
+  dataset = ImageFolderWithPath(data_dir, transform=transform)
   data_loader = data.DataLoader(dataset, batch_size=64, shuffle=False, num_workers=4)
   return data_loader
 
@@ -43,7 +49,7 @@ def get_vectors(img_dir):
   vectors = []
 
   with torch.no_grad():
-    for images, _ in tqdm(data_loader):
+    for images, fnames in tqdm(data_loader):
       images = images.to(device)
       vectors_batch = model(images).squeeze().cpu().numpy()
       vectors.extend(vectors_batch)
