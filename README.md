@@ -1,5 +1,7 @@
 # Mercari Image Extractor
 
+A python program to extract item images from Mercari.
+
 ![demo](https://user-images.githubusercontent.com/17039389/61799835-cb2afc80-ae66-11e9-9f5b-9f4f06d296f8.gif)
 
 ## How to use
@@ -10,6 +12,7 @@
 1. `python crop_item_images` to crop item images.
 1. `python make_vectors.py` to convert the item images to vectors.
 1. `python make_tiles.py` to create a sprite image.
+1. `tensorboard --logdir .` to run Tensorboard and visualize the image vectors.
 
 ## Vysor
 
