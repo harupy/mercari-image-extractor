@@ -1,5 +1,7 @@
 # Mercari Item Image Extactor
 
+![demo](https://user-images.githubusercontent.com/17039389/61799835-cb2afc80-ae66-11e9-9f5b-9f4f06d296f8.gif)
+
 ## How to use
 
 1. `python show_mouse_position.py` to find the left top and bottom right coordinates on the screen of your tablet.
