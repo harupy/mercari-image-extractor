@@ -13,8 +13,8 @@ from utils import mkdir_if_not_exists
 
 class ImageFolderWithPath(torchvision.datasets.ImageFolder):
   def __getitem__(self, index):
-    fname = self.imgs[index]
-    return super().__getitem__(index)[0], fname
+    img_path = self.imgs[index]
+    return super().__getitem__(index)[0], img_path
 
 
 def get_data_loader(data_dir, transform):
